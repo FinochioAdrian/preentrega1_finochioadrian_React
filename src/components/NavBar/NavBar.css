@@ -1,0 +1,22 @@
+.nav__container {
+  background:linear-gradient( rgb(1, 1, 91)0%, rgb(8, 8, 149)50%);
+  height: 64px;
+}
+.nav__btn{
+  border: none;
+  background-color: initial;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 500ms linear;
+}
+
+.nav__btn:hover{
+  color: brown;
+  margin-bottom: -100px;
+  font-size: 1.3rem;
+  
+
+  border-bottom: 4px solid brown ;
+
+}
