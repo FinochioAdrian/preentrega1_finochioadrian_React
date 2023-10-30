@@ -1,0 +1,42 @@
+.card__item--Detail {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+    box-shadow: 0 0 10px black;
+    
+}
+
+.card__picture--Detail{
+    margin: 0 auto;
+    width: 250px;
+    height: 150px;
+    overflow: hidden;
+}
+.card__item--Detail img {
+    
+    width: 100%;
+    height: auto;
+
+}
+.card__title--Detail{
+text-align: center;
+
+
+}
+.card__body--Detail {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+    overflow: hidden;
+
+    
+}
+.Info--Detail{
+    word-wrap: break-word;
+}
+.card__footer--Detail {
+    
+    margin: 7px auto;
+}

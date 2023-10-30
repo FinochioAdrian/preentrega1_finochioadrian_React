@@ -1,0 +1,39 @@
+.ItemCount {
+    margin: 0 auto;
+
+   
+}
+
+.ItemCount__inputs{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.ItemCount__inputs--Decrement{
+flex: 1;
+}
+.ItemCount__inputs--Increment {
+    flex: 1;
+
+}
+.ItemCount__inputs--Quantity{
+    flex: 3;
+    text-align: center;
+
+}
+
+.ItemCount button {
+     
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color:rgb(62, 62, 210);
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .ItemCount button:disabled{
+    background-color:rgb(116, 116, 227);
+
+  }
