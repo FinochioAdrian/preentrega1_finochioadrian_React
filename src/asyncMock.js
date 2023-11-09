@@ -48,3 +48,14 @@ export const getProductById = (id) => {
     }, 1000);
   });
 };
+export const getProductByCategory = (category) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const product = products.find((product) => {
+        return product.category == category;
+      });
+
+      product ? resolve(product) : reject("Producto no encontrado");
+    }, 1000);
+  });
+};

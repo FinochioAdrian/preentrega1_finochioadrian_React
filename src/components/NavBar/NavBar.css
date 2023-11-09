@@ -1,6 +1,6 @@
 .nav__container {
   background:linear-gradient( rgb(2, 2, 129)0%, rgb(7, 7, 187)50%);
-  height: 64px;
+  height: 76px;
 }
 .nav__btn{
   border: none;
@@ -8,15 +8,15 @@
   color: white;
   font-size: 1.2rem;
   font-weight: 600;
-  transition: all 400ms linear;
+  transition: all 250ms linear;
 }
 
 .nav__btn:hover{
-  color: brown;
-  margin-bottom: -100px;
+  color: rgb(94, 174, 208);
+  
   font-size: 1.3rem;
   
 
-  border-bottom: 4px solid brown ;
+  border-bottom: 4px solid rgb(94, 174, 208); ;
 
 }

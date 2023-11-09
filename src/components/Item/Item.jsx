@@ -9,7 +9,9 @@ const Item = ({ id, name, price, category, img, stock, description }) => {
     </picture>
     <section className='card__body'>
         <p>Precio: ${price}</p>
+        <p>Categoría: {category}</p>
         <p>Stock disponible: {stock}</p>
+        
     </section>
     <footer className='card__footer'>
         <button className='card__footer--button'>Ver detalle</button>
