@@ -16,10 +16,10 @@ function DropdownMenuNav({title,className}) {
 
       <Dropdown.Menu>
 
-        <Dropdown.Item ><Link className='notStyleLink' to={'/'}>Todos</Link></Dropdown.Item>
-        <Dropdown.Item ><Link className='notStyleLink' to={'/category/Landing'}>Landing Pages</Link></Dropdown.Item>
-        <Dropdown.Item ><Link className='notStyleLink' to={'/category/Web'}>Web Comercial</Link></Dropdown.Item>
-        <Dropdown.Item ><Link className='notStyleLink' to={'/category/E-Commerce'}>Comercio en Linea</Link></Dropdown.Item>
+        <Dropdown.Item  as={Link} to={'/'}  >Todo</Dropdown.Item>
+        <Dropdown.Item as={Link} to={'/category/Landing'} >Landing Pages</Dropdown.Item>
+        <Dropdown.Item as={Link} to={'/category/Web'} >Web Comercial</Dropdown.Item>
+        <Dropdown.Item as={Link} to={'/category/E-Commerce'} >Comercio en Linea</Dropdown.Item>
         
       </Dropdown.Menu>
     </Dropdown>

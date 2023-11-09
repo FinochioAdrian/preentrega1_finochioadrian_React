@@ -12,10 +12,7 @@ function NavBar() {
         <NavLink to={'/buildPage'}>
         <button className='nav__btn'>Nosotros</button>
         </NavLink>
-        <NavLink to={'/'}>
-        <button className='nav__btn'>Productos</button>
         
-        </NavLink>
         <DropdownMenuNav title={'Productos'} className='nav__btn'/>
         <NavLink to={'/buildPage'}>
         <button className='nav__btn'>Servicios</button>
