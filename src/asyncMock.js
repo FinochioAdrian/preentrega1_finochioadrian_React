@@ -9,6 +9,15 @@ const products = [
     description: "Landing Page de diseño elegante y moderno ",
   },
   {
+    id: "4",
+    name: "Landing Page 2",
+    price: "100",
+    category: "Landing",
+    img: "https://t4.ftcdn.net/jpg/02/47/67/13/360_F_247671337_hq1PMPFztZ5hZsMbV9nWNyxM7BYnlD6I.jpg",
+    stock: "10",
+    description: "Landing Page de diseño elegante y moderno ",
+  },
+  {
     id: "2",
     name: "Web Empresarial",
     price: "150",
@@ -51,7 +60,7 @@ export const getProductById = (id) => {
 export const getProductByCategory = (category) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const product = products.find((product) => {
+      const product = products.filter((product) => {
         return product.category == category;
       });
 

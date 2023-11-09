@@ -2,7 +2,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import "./ItemDetail.css";
 
 const ItemDetail = ({ id, name, price, category, img, stock, description }) => {
-  console.log(id, name, price, category, img, stock, description);
+  
   return (
     <article className="card__item--Detail">
       <header className="card__title--Detail">

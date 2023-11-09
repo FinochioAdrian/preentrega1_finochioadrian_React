@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Item from "../Item/Item";
 import "./ItemList.css";
 const ItemList = ({ products }) => {
-  console.log("products",products);
+  
   return (
     <div className="itemList">
       {products.map((prod) => (

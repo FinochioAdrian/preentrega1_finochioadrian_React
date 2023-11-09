@@ -4,12 +4,15 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
+
+
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
   const [fetchError, setFetchError] = useState("");
-  const { id } = useParams();
+  const { id:itemId } = useParams();
+
   useEffect(() => {
-    getProductById(id)
+    getProductById(itemId)
       .then((data) => {
         setProduct(data);
         setFetchError("");
@@ -17,7 +20,7 @@ const ItemDetailContainer = () => {
       .catch((error) => {
         setFetchError(error);
       });
-  }, [id]);
+  }, [itemId]);
 
   return (
     <>
@@ -26,7 +29,6 @@ const ItemDetailContainer = () => {
           <h2 s>Producto no Encontrado!!</h2>
         )}
       </div>
-      
     </>
   );
 };
