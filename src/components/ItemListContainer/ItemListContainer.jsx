@@ -32,7 +32,7 @@ function ItemListContainer({ greeting }) {
         <Spinner animation="border" variant="primary" /> 
         :  
         <>
-        <h1>{greeting}</h1>
+        <h1>{greeting} {categoryId&&categoryId}</h1>
         <ItemList products={products} />
         
         </>

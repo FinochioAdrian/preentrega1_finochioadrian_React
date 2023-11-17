@@ -6,7 +6,7 @@ import DropdownMenuNav from '../DropdownMenuNav/DropdownMenuNav'
 function NavBar() {
   return (
     <nav className='container-fluid d-flex justify-content-around align-items-center nav__container'>
-      <h5 className='text-light'> <Link to={'/'} className='notStyleLink' style={{color:'white'}}>Design Ideas Web</Link></h5>
+      <h5 className='text-light'> <Link to={'/'} className='notStyleLink' style={{color:'white'}}>Web Design Ideas</Link></h5>
       <div className='d-flex gap-5'>
 
         <NavLink to={'/buildPage'}>
