@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { getProductByCategory, getProducts } from "../../asyncMock";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 function ItemListContainer({ greeting }) {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(null);
+  
 
   const { id: categoryId } = useParams();
 
@@ -18,10 +20,24 @@ function ItemListContainer({ greeting }) {
       });
   }, [categoryId]);
 
+  
+
   return (
     <div>
-      <h1>{greeting}</h1>
-      {<ItemList products={products} />}
+      
+      {
+       
+
+        !products ?
+        <Spinner animation="border" variant="primary" /> 
+        :  
+        <>
+        <h1>{greeting}</h1>
+        <ItemList products={products} />
+        
+        </>
+      }
+     
     </div>
   );
 }

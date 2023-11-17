@@ -4,6 +4,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 
 const ItemDetailContainer = () => {
@@ -24,10 +25,23 @@ const ItemDetailContainer = () => {
 
   return (
     <>
+    
       <div className="ItemDetailContainer">
-        {(!fetchError && <ItemDetail {...product} />) || (
+        {
+        !product && !fetchError &&(
+          <Spinner animation="border" role="status" />)
+        }
+        {
+
+        fetchError &&
           <h2 s>Producto no Encontrado!!</h2>
-        )}
+          }
+          
+        { product && !fetchError &&
+            <ItemDetail {...product} />
+            
+        }
+          
       </div>
     </>
   );
