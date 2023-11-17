@@ -1,0 +1,11 @@
+.Cart_button {
+     
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color:rgb(62, 62, 210);
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+  }

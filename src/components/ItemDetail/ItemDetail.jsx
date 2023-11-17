@@ -47,7 +47,7 @@ const {addItem} = useContext(CartContext)
         ) : (
           <ItemCount
             initial={0}
-            stock={10}
+            stock={stock}
             onAdd={handleOnAdd}
           />
         )}

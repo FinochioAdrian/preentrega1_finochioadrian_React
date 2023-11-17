@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar/NavBar";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import PageBuild from "./pages/PageBuild/PageBuild";
 import { CartProvider } from "./context/CartProvider";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/item/:id" element={<ItemDetailContainer />} />
 
             <Route path="/buildPage" element={<PageBuild />} />
+            <Route path="/cart" element={<Cart/>} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </CartProvider>
