@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { getProductById } from "../../asyncMock";
+
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
+import { db } from "../../services/Firebase/FirebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
 
 
 const ItemDetailContainer = () => {
@@ -13,14 +15,26 @@ const ItemDetailContainer = () => {
   const { id:itemId } = useParams();
 
   useEffect(() => {
-    getProductById(itemId)
-      .then((data) => {
-        setProduct(data);
-        setFetchError("");
-      })
-      .catch((error) => {
-        setFetchError(error);
-      });
+
+
+
+    const docRef = doc(db,'products',itemId)
+
+    getDoc(docRef)
+    .then(res => {
+      
+      const data = res.data()
+      if (!data){
+        throw new Error ('No data found')
+      }
+      const productsAdapted = {id:res.id, ...data}
+      setProduct(productsAdapted)      
+    })
+    .catch(error =>{
+      console.error(error);
+      setFetchError(error)
+    })
+   
   }, [itemId]);
 
   return (
@@ -34,7 +48,7 @@ const ItemDetailContainer = () => {
         {
 
         fetchError &&
-          <h2 s>Producto no Encontrado!!</h2>
+          <h2>Producto no Encontrado!!</h2>
           }
           
         { product && !fetchError &&
