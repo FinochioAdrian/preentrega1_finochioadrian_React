@@ -48,7 +48,7 @@ const ItemDetailContainer = () => {
         {
 
         fetchError &&
-          <h2>Producto no Encontrado!!</h2>
+          <h2>El producto no Existe!!</h2>
           }
           
         { product && !fetchError &&

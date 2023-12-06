@@ -22,9 +22,8 @@ const UpLoaderAllProducts = () => {
         })
         try {
             await Promise.all(promises);
-            console.log('Todos los datos subidos');
         }catch(error){
-            console.log('Problemas al subir los datos');
+            console.error('Problemas al subir los datos', error);
         }
     }
   return (

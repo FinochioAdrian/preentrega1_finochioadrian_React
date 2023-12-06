@@ -19,7 +19,6 @@ const Checkout = () => {
     const [loading, setLoading] = useState(false)
     const [orderId , setOrderId] = useState('')
     const {cart,total,clearCart} = useContext(CartContext)
-    console.log(cart);
 const createOrder = async ({name,phone,email}) => {
     setLoading(true)
     try {
@@ -37,16 +36,12 @@ const createOrder = async ({name,phone,email}) => {
         const ids = cart.map(prod=>prod.id)
         const productsRef = collection(db, 'products')
         const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(),'in',ids)))
-        console.log("productsAddedFromFirestore",productsAddedFromFirestore);
         const {docs} =productsAddedFromFirestore
         docs.forEach(doc => {
             const dataDoc = doc.data()
-            console.log(dataDoc);
             const stockDb =dataDoc.stock
             const productAddedToCart = cart.find(prod=> prod.id ===doc.id)
             const prodQuantity = productAddedToCart?.quantity
-            console.log('stockDb',typeof stockDb);
-            console.log('prodQuantity',typeof prodQuantity);
             if(stockDb >=prodQuantity) {
                 batch.update(doc.ref, {stock: stockDb-prodQuantity})
             }else {
@@ -76,8 +71,6 @@ const createOrder = async ({name,phone,email}) => {
        
 }
 const handleSubmitCheck = (data) => {
-  console.log("datosDelFormulario",data);
-  console.log("Intentando enviar el formulario");
   
    createOrder(data) 
 }
