@@ -2,8 +2,6 @@
 
 Es una SAP que está construida íntegramente con React, Consiste en una tienda virtual para ofrecer servicios de desarrollo de Software a medida del cliente.
 
-
-
 Se utilizo:
  useState para guardar los estados de los componentes
  useEffect para controlar los efectos secundarios.
@@ -33,27 +31,40 @@ Se utilizo:
 ## Capturas de Pantalla
 
 ### Página principal
+
 ![Alt text](image.png)
+
 ### Página principal vista productos
+
 ![Alt text](image-1.png)
+
 ### Página todos los productos
+
 ![Alt text](image-2.png)
+
 ### Página item Detail
+
 ![Alt text](image-3.png)
-#### Detalle menu Cart 
+
+#### Detalle menu Cart
+
 ![Alt text](image-4.png)
+
 ### Página cart
+
 ![Alt text](image-5.png)
+
 ### Página Formulario de compra
+
 ![Alt text](image-6.png)
 
 ## Características Principales
 
-- La aplicación cuenta con un menu principal desde cuál poder navegar. 
+- La aplicación cuenta con un menu principal desde cuál poder navegar.
 En el menu desplegable Productos se puede navegar por categorías.
 Cuenta con un cart menu y una página de cart.
 Se utiliza firebase para la persistencia del stock y de la solicitudes de pedidos.
 
 ## Licencia
-Se distribuye bajo la licencia  Atribución-NoComercial (CC BY-NC): Esta licencia permite a otros copiar, distribuir, mostrar y realizar la obra y trabajos derivados basados en ella, pero no con fines comerciales, y solo si dan crédito al autor o licenciante de la manera especificada por estos.
 
+Se distribuye bajo la licencia  Atribución-NoComercial (CC BY-NC): Esta licencia permite a otros copiar, distribuir, mostrar y realizar la obra y trabajos derivados basados en ella, pero no con fines comerciales, y solo si dan crédito al autor o licenciante de la manera especificada por estos.
