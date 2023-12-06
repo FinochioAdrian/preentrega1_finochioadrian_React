@@ -22,7 +22,7 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<ItemListContainer greeting={"Bienvenidos!!"} />}
+              element={<ItemListContainer />}
             />
             <Route
               path="/category/:id"
