@@ -5,8 +5,9 @@ import {CartContext} from '../../context/CartContext'
 
 import {db} from '../../services/Firebase/FirebaseConfig'
 import { Timestamp, collection, documentId, getDocs, query, where, writeBatch,addDoc } from "@firebase/firestore";
-import { Spinner } from "react-bootstrap";
+import { Row, Spinner } from "react-bootstrap";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 
@@ -88,13 +89,23 @@ useEffect(() => {
     <>
 {!cart.length>0 && !orderId && <div className="d-flex justify-content-center align-items-center" style={{height:'75vh'}}><h1>El carrito está Vacío</h1> </div>}
 
-    {loading&& !orderId &&  <div>
+    {loading&& !orderId &&  <div className="vh-75 d-flex justify-content-center align-items-center " >
         <h1>Se está generando su orden</h1>
         <Spinner animation="border" variant="primary" />
     </div> }
     {orderId && 
-    <div className="vh-75 d-flex justify-content-center align-items-center " >
+    <div className="vh-75 d-flex justify-content-center align-items-center flex-column" >
+    <Row className="my-1" >
     <h1>El id de su orden es: {orderId}</h1>
+
+    </Row>
+    
+    <Row className="my-1" >
+           <Link to={"/all"} className="ItemDetail_button__finished">
+            {" "}
+            Seguir Comprando
+          </Link>
+        </Row>
     </div>
     }
     {
