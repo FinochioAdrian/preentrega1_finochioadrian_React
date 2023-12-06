@@ -1,0 +1,6 @@
+.cardCart_img {
+    
+    height: 15vh;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}

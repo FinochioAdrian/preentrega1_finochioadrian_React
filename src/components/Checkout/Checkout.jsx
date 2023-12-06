@@ -19,7 +19,7 @@ const Checkout = () => {
     const [loading, setLoading] = useState(false)
     const [orderId , setOrderId] = useState('')
     const {cart,total,clearCart} = useContext(CartContext)
-
+    console.log(cart);
 const createOrder = async ({name,phone,email}) => {
     setLoading(true)
     try {
@@ -27,7 +27,7 @@ const createOrder = async ({name,phone,email}) => {
             buyer: {
                 name,phone, email
             },
-            items:cart,
+            items:cart.map(({id,name,price,quantity}) => {return {id ,name,price,quantity}}),
             total,
             date: Timestamp.fromDate(new Date())
         }
@@ -93,17 +93,24 @@ useEffect(() => {
 
   return (
     <>
-{!cart.length>0 && <div className="d-flex justify-content-center align-items-center" style={{height:'75vh'}}><h1>El carrito está Vacío</h1> </div>}
+{!cart.length>0 && !orderId && <div className="d-flex justify-content-center align-items-center" style={{height:'75vh'}}><h1>El carrito está Vacío</h1> </div>}
+
     {loading&& !orderId &&  <div>
         <h1>Se está generando su orden</h1>
         <Spinner animation="border" variant="primary" />
     </div> }
-    {orderId && <h1>El id de su orden es: {orderId}</h1>}
+    {orderId && 
+    <div className="vh-75 d-flex justify-content-center align-items-center " >
+    <h1>El id de su orden es: {orderId}</h1>
+    </div>
+    }
     {
        !loading && !orderId && cart.length>0 &&
 
+        
+            <CheckoutForm onConfirm={createOrder} handleSubmitCheck={handleSubmitCheck} />    
 
-        <CheckoutForm onConfirm={createOrder} handleSubmitCheck={handleSubmitCheck} />    
+        
     }
     
     

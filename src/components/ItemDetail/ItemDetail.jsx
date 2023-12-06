@@ -49,7 +49,7 @@ const ItemDetail = ({ id, name, price, category, img, stock, description }) => {
         {quantityAdded > 0 ? (
           <>
            <Row className="my-1">
-           <Link to={"/"} className="ItemDetail_button__finished">
+           <Link to={"/all"} className="ItemDetail_button__finished">
             {" "}
             Seguir Comprando
           </Link>

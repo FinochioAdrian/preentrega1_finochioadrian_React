@@ -1,7 +1,9 @@
 import React, { useContext } from 'react' 
 import { Button, Card, Col, Row } from 'react-bootstrap'
 import { CartContext } from "../../context/CartContext";
-const CartItem = ({id,name,price,quantity}) => {
+import './CartItem.css'
+
+const CartItem = ({id,name,price,quantity,img}) => {
   const {removeItem} = useContext(CartContext)
   return (
 
@@ -9,6 +11,7 @@ const CartItem = ({id,name,price,quantity}) => {
     <Card.Body>
     <Row >
         
+          <Col > <img className='cardCart_img' src={img} alt={name} /></Col>
           <Col>
           Producto: {name}
           </Col>

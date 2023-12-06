@@ -24,3 +24,19 @@
 .min-vh-75 {
     min-height: 75vh;
   }
+  
+.vw-25 {
+    width:25vw;
+  }
+.vw-30 {
+    width:30vw;
+  }
+.vw-50 {
+    width:50vw;
+  }
+.vw-75 {
+    width:75vw;
+  }
+.min-vw-75 {
+    min-width:75vw;
+  }
