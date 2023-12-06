@@ -16,7 +16,7 @@ function DropdownMenuNav({title,className}) {
 
       <Dropdown.Menu>
 
-        <Dropdown.Item  as={Link} to={'/'}  >Todo</Dropdown.Item>
+        <Dropdown.Item  as={Link} to={'/all'}  >Todo</Dropdown.Item>
         <Dropdown.Item as={Link} to={'/category/Landing'} >Landing Pages</Dropdown.Item>
         <Dropdown.Item as={Link} to={'/category/Web'} >Web Comercial</Dropdown.Item>
         <Dropdown.Item as={Link} to={'/category/E-Commerce'} >Comercio en Linea</Dropdown.Item>

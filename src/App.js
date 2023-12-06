@@ -11,7 +11,7 @@ import { CartProvider } from "./context/CartProvider";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import UpLoaderAllProducts from "./components/UpLoaderAllProducts/UpLoaderAllProducts";
-import UsandoParticleJs from './pages/UsandoParticleJs/UsandoParticleJs';
+import IndexPage from './pages/IndexPage/IndexPage';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <NavBar />
           <Routes>
             <Route
-              path="/"
+              path="/all"
               element={<ItemListContainer />}
             />
             <Route
@@ -35,9 +35,9 @@ function App() {
             <Route path="/buildPage" element={<PageBuild />} />
             <Route path="/cart" element={<Cart/>} />
             <Route path="/checkout" element={<Checkout/>} />
+            <Route path="/" element={<IndexPage />} />
             <Route path="*" element={<PageNotFound />} />
             <Route path="/UpLoaderAllProducts" element={<UpLoaderAllProducts />} />
-            <Route path="/Particulas" element={<UsandoParticleJs />} />
           </Routes>
         </CartProvider>
       </BrowserRouter>
