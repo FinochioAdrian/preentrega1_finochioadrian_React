@@ -1,7 +1,7 @@
 import React, { useContext } from 'react' 
 import { Button, Card, Col, Row } from 'react-bootstrap'
 import { CartContext } from "../../context/CartContext";
-const CartItem = ({item,quantity}) => {
+const CartItem = ({id,name,price,quantity}) => {
   const {removeItem} = useContext(CartContext)
   return (
 
@@ -10,20 +10,20 @@ const CartItem = ({item,quantity}) => {
     <Row >
         
           <Col>
-          Producto: {item.name}
+          Producto: {name}
           </Col>
           <Col>
-          Price: {item.price}
+          Price: {price}
           </Col>
           <Col>
           Cantidad: {quantity}
           </Col>
           <Col>
-          Total: {item.price*quantity}
+          Total: {price*quantity}
           </Col>
           <Col >
-          <Button variant="danger" onClick={() => removeItem(item.id)}>
-          <i class="bi bi-trash3"></i> Eliminar
+          <Button variant="danger" onClick={() => removeItem(id)}>
+          <i className="bi bi-trash3"></i> Eliminar
           </Button>
           </Col >
           
@@ -31,10 +31,6 @@ const CartItem = ({item,quantity}) => {
       </Row>
     </Card.Body>
   </Card>
-
-
-    
-      
 
    
   )

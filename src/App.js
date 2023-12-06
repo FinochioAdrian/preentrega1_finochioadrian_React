@@ -1,3 +1,4 @@
+import React  from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
@@ -8,6 +9,9 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import PageBuild from "./pages/PageBuild/PageBuild";
 import { CartProvider } from "./context/CartProvider";
 import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
+import UpLoaderAllProducts from "./components/UpLoaderAllProducts/UpLoaderAllProducts";
+import UsandoParticleJs from './pages/UsandoParticleJs/UsandoParticleJs';
 
 function App() {
   return (
@@ -30,7 +34,10 @@ function App() {
 
             <Route path="/buildPage" element={<PageBuild />} />
             <Route path="/cart" element={<Cart/>} />
+            <Route path="/checkout" element={<Checkout/>} />
             <Route path="*" element={<PageNotFound />} />
+            <Route path="/UpLoaderAllProducts" element={<UpLoaderAllProducts />} />
+            <Route path="/Particulas" element={<UsandoParticleJs />} />
           </Routes>
         </CartProvider>
       </BrowserRouter>

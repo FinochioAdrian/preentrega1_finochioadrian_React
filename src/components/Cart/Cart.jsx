@@ -1,3 +1,4 @@
+import React  from 'react';
 import { useContext } from "react";
 import "./Cart.css";
 import { CartContext } from "../../context/CartContext";
@@ -24,7 +25,7 @@ const Cart = () => {
   }
 
   return <Container fluid className=" d-flex flex-column align-items-center gap-3" >{
-    cart.map(prod=><CartItem key={prod.item.id} {...prod} />)
+    cart.map(prod=><CartItem key={prod.id} {...prod} />)
 
 }
 

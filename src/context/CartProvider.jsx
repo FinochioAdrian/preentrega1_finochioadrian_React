@@ -1,34 +1,71 @@
 import { useEffect, useState } from "react";
 import { CartContext } from "./CartContext";
+import Swal from "sweetalert2";
+
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [total, setTotal] = useState(0);
-  console.log("CartProvider cart", cart);
 
-  const addItem = (item, quantity) => {
-    console.log("CartProvider addItem( item, quantity )", item, quantity);
-    console.log("CartProvider addItem() => item.id", item.id);
-    console.log(
-      "CartProvider addItem() => isInCart(item.id) ",
-      isInCart(item.id)
-    );
-    if (!isInCart(item.id)) {
-      setCart((prev) => [...prev, { item, quantity }]);
+  const addItem = (item, quantity,stock) => {
+    
+    if ( isInCart(item.id)) {
+
+     
+      if (!isQuantityAboveStock (item,quantity,stock)){const newCart = cart.map((prod)=> {
+        
+        if(prod.id === item.id ) {
+          
+            return {
+              ...prod,
+              quantity: prod.quantity + quantity
+            } 
+          
+          
+        }
+        return prod
+
+      })
+
+      setCart(newCart)}else{msgSinStock()}
     } else {
-      console.error("El producto ya fue agregado");
+     
+      setCart([
+        ...cart,
+        {...item,
+        quantity,}
+      ]);
     }
   };
+  const isQuantityAboveStock = (item,quantity,stock) => {
+    const newItem = cart.find((prod)=> {
+        return prod.id === item.id
+      
+    });
+
+    return newItem.quantity+quantity>stock ? true : false
+     
+      
+    
+    
+
+
+  }
+  const msgSinStock= ()=>{
+    
+    Swal.fire('No hay Suficiente Stock ')
+  }
   const removeItem = (itemId) => {
-    const cartUpdate = cart.filter((prod) => prod.item.id !== itemId);
+    const cartUpdate = cart.filter((prod) => prod.id !== itemId);
     setCart(cartUpdate);
   };
   const clearCart = () => {
     setCart([]);
   };
   const isInCart = (itemId) => {
-    return cart.some((prod) => prod.item.id === itemId);
+    
+    return cart.some((prod) => prod.id === itemId);
   };
 
   useEffect(() => {
@@ -40,15 +77,13 @@ export const CartProvider = ({ children }) => {
     const totalQuantity = cart.reduce((acumulador, prod) => {
       return acumulador + prod.quantity;
     }, 0);
-    console.log("totalQuantity =>", totalQuantity);
     setTotalQuantity(totalQuantity);
   };
 
   const calcTotalPrice = () => {
-    const totalPrice = cart.reduce((acumulador, prod) => {
-      return acumulador + (parseInt(prod.item.price)*prod.quantity);
+    const totalPrice = cart.reduce((acc, prod) => {
+      return acc + (parseInt(prod.price)*prod.quantity);
     }, 0);
-    console.log("totalPrice =>", totalPrice);
     setTotal(totalPrice);
 
   };
