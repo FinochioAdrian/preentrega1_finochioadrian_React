@@ -58,6 +58,10 @@ Se utilizo:
 
 ![Alt text](image-6.png)
 
+### Demostracion de Web Design Ideas
+
+![Alt text](WebDesignIdeas.gif)
+
 ## Características Principales
 
 - La aplicación cuenta con un menu principal desde cuál poder navegar.
