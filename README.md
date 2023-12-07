@@ -2,6 +2,7 @@
 
 Es una SAP que está construida íntegramente con React, Consiste en una tienda virtual para ofrecer servicios de desarrollo de Software a medida del cliente.
 
+Visita la Demostración en => [WEB DESIGN IDEAS] (https://preentrega-finochioadrian-react.vercel.app/)
 Se utilizo:
  useState para guardar los estados de los componentes
  useEffect para controlar los efectos secundarios.
